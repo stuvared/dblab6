@@ -1,3 +1,4 @@
+steps:
 - task: UseJavaVersion@1
   inputs:
     versionSpec: '17'
@@ -7,9 +8,7 @@
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '17'
-    jdkArchitectureOption: 'x64'
+    javaHomeOption: 'Path'  # <- Important change!
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
